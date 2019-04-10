@@ -79,9 +79,9 @@ function liri(operand, name) {
     // do-what-it-says
 
     else if (operand === "do-what-it-says") {
-        fs.readFile("random.txt", "utf8", function (error, data) {
-            if (error) {
-                return console.log(error);
+        fs.readFile("random.txt", "utf8", function (err, data) {
+            if (err) {
+                return console.log('Error occurred: ' + err);
             }
             var dataArr = data.split(",");
             liri(dataArr[0], dataArr[1]);
